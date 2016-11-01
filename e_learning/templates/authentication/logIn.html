@@ -1,69 +1,33 @@
- <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-        <html xmlns="http://www.w3.org/1999/xhtml">
-        <head>
-            {% load staticfiles %}
-        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-            <link href="{% static "css/login.css"%}" rel="stylesheet">
-        <title>Login Page</title>
+<html>
+{% load staticfiles %}
+{% load widget_tweaks %}
+<link href="{% static "css/login.css"%}" rel="stylesheet">
+<body>
+<form method="post">
+				{% csrf_token %}
+<div class="modal-dialog">
+    <div class="modal-content">
+        <div class="modal-header">
+          <h1 class="text-center">Welcome</h1>
+        </div>
+         <div class="modal-body">
+             <div class="form-group">
 
+                 {{ form.username|add_class:"form-control input-lg"|attr:"required:required"|attr:"aria-describedby=basic-addon1"}}
+             </div>
 
-        </head>
+             <div class="form-group">
+                 {{ form.password|add_class:"form-control input-lg"|attr:"required:required"|attr:"aria-describedby=basic-addon1"}}
+             </div>
 
-       <hgroup>
-  <h1>Welcome!</h1>
+             <div class="form-group">
+                 <input type="submit" class="btn btn-block btn-lg btn-primary" value="Login"/>
+                 <span class="pull-right"><a href="#">Register</a></span><span><a href="#">Forgot Password</a></span>
+             </div>
+         </div>
+    </div>
+ </div>
+    </form>
 
-
-</hgroup>
-<form>
-  <div class="group">
-    <input type="text"><span class="highlight"></span><span class="bar"></span>
-    <label>Username</label>
-  </div>
-  <div class="group">
-    <input type="password"><span class="highlight"></span><span class="bar"></span>
-    <label>Password</label>
-  </div>
-  <button type="button" class="button buttonBlue">Login
-    <div class="ripples buttonRipples"><span class="ripplesCircle"></span></div>
-  </button>
-</form>
-
-
- <script>
-     $(window, document, undefined).ready(function() {
-
-  $('input').blur(function() {
-    var $this = $(this);
-    if ($this.val())
-      $this.addClass('used');
-    else
-      $this.removeClass('used');
-  });
-
-  var $ripples = $('.ripples');
-
-  $ripples.on('click.Ripples', function(e) {
-
-    var $this = $(this);
-    var $offset = $this.parent().offset();
-    var $circle = $this.find('.ripplesCircle');
-
-    var x = e.pageX - $offset.left;
-    var y = e.pageY - $offset.top;
-
-    $circle.css({
-      top: y + 'px',
-      left: x + 'px'
-    });
-
-    $this.addClass('is-active');
-
-  });
-
-  $ripples.on('animationend webkitAnimationEnd mozAnimationEnd oanimationend MSAnimationEnd', function(e) {
-  	$(this).removeClass('is-active');
-  });
-
-});
- </script>
-        </html>
+</body>
+</body>
