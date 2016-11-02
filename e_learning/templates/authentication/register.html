@@ -43,10 +43,67 @@
 		        <h2 class="form-login-heading">sign in now</h2>
 		        <div class="login-wrap">
 
-					{{ form.username|add_class:"form-control"|attr:"required:required"|attr:"aria-describedby=basic-addon1"}}
+					 {{ form.username|add_class:"form-control"|attr:"placeholder:Username" }}
+					{% if form.username.errors %}
+                                                        <div class="alert alert-danger fade in" id="input-alert">
+                                                          <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+                                                          <strong>Warning!</strong>
+                                                  {% for error in form.username.errors %}
+                                                     {{ error }}
+                                                  {% endfor %}
+                                                            </div>
+                                                  {% endif %}
 		            <br>
 
-					{{ form.password|add_class:"form-control"|attr:"required:required"|attr:"aria-describedby=basic-addon1"}}
+					{{ form.email|add_class:"form-control"|attr:"placeholder:Email address" }}
+					 {% if form.email.errors %}
+                                            <div class="alert alert-danger fade in" id="input-alert">
+                                              <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+                                              <strong>Warning!</strong>
+                                              {% for error in form.email.errors %}
+                                                 {{ error }}
+                                              {% endfor %}
+                                                </div>
+                                                {% endif %}
+					<br>
+
+
+
+                                        {{ form.password|add_class:"form-control login_field"|attr:"placeholder:Password" }}
+
+
+
+				                    {% if form.password.errors %}
+                                            <div class="alert alert-danger fade in" id="input-alert">
+                                              <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+                                              <strong>Warning!</strong>
+                                              {% for error in form.password.errors %}
+                                                 {{ error }}
+                                              {% endfor %}
+                                            </div>
+                                  {% endif %}
+					<br>
+
+
+
+
+
+                                       {{ form.retypepassword|add_class:"form-control login_field"|attr:"placeholder:Retype password" }}
+
+                                             {% if form.retypepassword.errors %}
+                                                    <div class="alert alert-danger fade in" id="input-alert">
+                                                      <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+                                                      <strong>Warning!</strong>
+                                                      {% for error in form.retypepassword.errors %}
+                                                         {{ error }}
+                                                      {% endfor %}
+                                                    </div>
+                                                {% endif %}
+
+
+
+
+
 
 		             <label class="checkbox">
 		                <span class="pull-right">
@@ -72,7 +129,7 @@
 		            </div>
 		            <div class="registration">
 		                Don't have an account yet?<br/>
-		                <a class="" href="/register">
+		                <a class="" href="#">
 		                    Create an account
 		                </a>
 		            </div>
