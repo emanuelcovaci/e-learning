@@ -39,7 +39,11 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
 
     'homepages',
-'widget_tweaks',
+    'domain',
+    'lesson',
+
+
+    'widget_tweaks',
 ]
 
 MIDDLEWARE = [
@@ -124,5 +128,7 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/1.10/howto/static-files/
 
 STATIC_URL = '/static/'
+
+LOGIN_URL = '/login/'
 
 STATICFILES_DIRS = ( os.path.join('static'), )
