@@ -276,17 +276,18 @@
 
               <div class="row">
                   <div class="col-lg-9 main-chart">
-                  
 
-                  
-                      
+
+
+
                       <div class="row mt">
                       <!-- SERVER STATUS PANELS -->
 
+                          {% for materie in domain %}
                       	<div class="col-md-4 col-sm-4 mb">
                       		<div class="white-panel pn">
                       			<div class="white-header">
-						  			<h5>Limba si Literatura Romana</h5>
+						  			<h5>{{ materie.name }}</h5>
                       			</div>
 								<div class="row">
 									<div class="col-sm-6 col-xs-6 goleft">
@@ -295,108 +296,23 @@
 									<div class="col-sm-6 col-xs-6"></div>
 	                      		</div>
 	                      		<div class="centered">
-										<img src="{% static "assets/img/romana.jpg"%}" width="220">
-	                      		</div>
-                      		</div>
-                      	</div><!-- /col-md-4 -->
+										<img src="{{STATIC_URL}} static/assets/img/{{ materie.path_banner }}" width="200">
+                                       <!--<img  style="background-image: url({% static 'assets/img/'%}{{ materie.path_banner }}) width="220">-->
 
-                      	<div class="col-md-4 col-sm-4 mb">
-                      		<div class="white-panel pn">
-                      			<div class="white-header">
-						  			<h5>Matematica</h5>
-                      			</div>
-								<div class="row">
-									<div class="col-sm-6 col-xs-6 goleft">
-										<p><i class="fa fa-heart"></i> 122</p>
-									</div>
-									<div class="col-sm-6 col-xs-6"></div>
 	                      		</div>
-	                      		<div class="centered">
-										<img src="{% static "assets/img/mate.jpg"%}" width="220">
-	                      		</div>
+
                       		</div>
                       	</div><!-- /col-md-4 -->
-                      	
-						<div class="col-md-4 col-sm-4 mb">
-                      		<div class="white-panel pn">
-                      			<div class="white-header">
-						  			<h5>Informatica</h5>
-                      			</div>
-								<div class="row">
-									<div class="col-sm-6 col-xs-6 goleft">
-										<p><i class="fa fa-heart"></i> 122</p>
-									</div>
-									<div class="col-sm-6 col-xs-6"></div>
-	                      		</div>
-	                      		<div class="centered">
-										<img src="{% static "assets/img/info.jpg"%}" width="220">
-	                      		</div>
-                      		</div>
-                      	</div><!-- /col-md-4 -->
-                      	
+                          {% endfor %}
+
+
+
+
+
+
 
                     </div><!-- /row -->
-                    
-                    				
-					<div class="row">
-						<!-- TWITTER PANEL -->
 
-                        <div class="col-md-4 col-sm-4 mb">
-                      		<div class="white-panel pn">
-                      			<div class="white-header">
-						  			<h5>Fizica</h5>
-                      			</div>
-								<div class="row">
-									<div class="col-sm-6 col-xs-6 goleft">
-										<p><i class="fa fa-heart"></i> 122</p>
-									</div>
-									<div class="col-sm-6 col-xs-6"></div>
-	                      		</div>
-	                      		<div class="centered">
-										<img src="{% static "assets/img/fizica2.jpg"%}" width="220">
-	                      		</div>
-                      		</div>
-                      	</div><!-- /col-md-4 -->
-
-						<div class="col-md-4 col-sm-4 mb">
-                      		<div class="white-panel pn">
-                      			<div class="white-header">
-						  			<h5>Chimie</h5>
-                      			</div>
-								<div class="row">
-									<div class="col-sm-6 col-xs-6 goleft">
-										<p><i class="fa fa-heart"></i> 122</p>
-									</div>
-									<div class="col-sm-6 col-xs-6"></div>
-	                      		</div>
-	                      		<div class="centered">
-										<img src="{% static "assets/img/chimie.jpg"%}" width="220">
-	                      		</div>
-                      		</div>
-                      	</div><!-- /col-md-4 -->
-
-
-                        <div class="col-md-4 col-sm-4 mb">
-                      		<div class="white-panel pn">
-                      			<div class="white-header">
-						  			<h5>Biologie</h5>
-                      			</div>
-								<div class="row">
-									<div class="col-sm-6 col-xs-6 goleft">
-										<p><i class="fa fa-heart"></i> 122</p>
-									</div>
-									<div class="col-sm-6 col-xs-6"></div>
-	                      		</div>
-	                      		<div class="centered">
-										<img src="{% static "assets/img/bio.jpg"%}" width="180">
-	                      		</div>
-                      		</div>
-                      	</div><!-- /col-md-4 -->
-						
-					</div><!-- /row -->
-					
-
-					
                   </div><!-- /col-lg-9 END SECTION MIDDLE -->
                   
                   
