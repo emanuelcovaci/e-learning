@@ -8,15 +8,14 @@ from lesson.models import Lesson
 # Create your views here.
 
 @login_required
-def Domain(request, kind):
-    domains = Domain.objects.all()
+def domain(request, kind):
     page_domain = get_object_or_404(Domain, name=kind)
     lesson = Lesson.objects.all().filter(domain=page_domain,
-                                             status=False).order_by(
+                                             ).order_by(
                                                  '-id')
     return render(request, 'domain/domain.html', {
-        'domain': domains,
-        'kind': page_domain,
+        'domain': page_domain,
+        'lesson': lesson,
 
     },
                   )
