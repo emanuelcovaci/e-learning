@@ -2,77 +2,7 @@
 {% load staticfiles %}
 {% block content %}
       
-      <!-- **********************************************************************************************************************************************************
-      MAIN SIDEBAR MENU
-      *********************************************************************************************************************************************************** -->
-      <!--sidebar start-->
-      <aside>
-          <div id="sidebar"  class="nav-collapse ">
-              <!-- sidebar menu start-->
-              <ul class="sidebar-menu" id="nav-accordion">
-              
-              	  <p class="centered"><a href="profile.html"><img src="{% static "assets/img/ema2.jpg"%}" class="img-circle" width="70"></a></p>
-              	  <h5 class="centered">Emanuel Covaci</h5>
-              	  	
-                  <li class="mt">
-                      <a class="active" href="index.html">
-                          <i class="fa fa-dashboard"></i>
-                          <span>Acasa</span>
-                      </a>
-                  </li>
 
-                  <li class="sub-menu">
-                      <a href="javascript:;" >
-                          <i class="fa fa-desktop"></i>
-                          <span>Materii</span>
-                      </a>
-                      <ul class="sub">
-                          <li><a  href="#">Limba Romana</a></li>
-                          <li><a  href="#">Matematica</a></li>
-                          <li><a  href="#">Informatica</a></li>
-                           <li><a  href="#">Fizica</a></li>
-                          <li><a  href="#">Chimie</a></li>
-                          <li><a  href="#">Biologie</a></li>
-                      </ul>
-                  </li>
-
-                  <li class="sub-menu">
-                      <a href="javascript:;" >
-                          <i class="fa fa-cogs"></i>
-                          <span>Adauga Lectie</span>
-                      </a>
-
-                  </li>
-                  <li class="sub-menu">
-                      <a href="javascript:;" >
-                          <i class="fa fa-book"></i>
-                          <span>Contact</span>
-                      </a>
-
-                  </li>
-                  <li class="sub-menu">
-                      <a href="javascript:;" >
-                          <i class="fa fa-tasks"></i>
-                          <span>Report</span>
-                      </a>
-                      <ul class="sub">
-                          <li><a  href="form_component.html">Form Components</a></li>
-                      </ul>
-                  </li>
-                  <li class="sub-menu">
-                      <a href="javascript:;" >
-                          <i class="fa fa-th"></i>
-                          <span>Setari</span>
-                      </a>
-
-                  </li>
-
-
-              </ul>
-              <!-- sidebar menu end-->
-          </div>
-      </aside>
-      <!--sidebar end-->
       
       <!-- **********************************************************************************************************************************************************
       MAIN CONTENT
@@ -91,6 +21,7 @@
                       <!-- SERVER STATUS PANELS -->
 
                           {% for materie in domain %}
+                              <a href="/{{ materie.name }}">
                       	<div class="col-md-4 col-sm-4 mb">
                       		<div class="white-panel pn">
                       			<div class="white-header">
@@ -103,13 +34,13 @@
 									<div class="col-sm-6 col-xs-6"></div>
 	                      		</div>
 	                      		<div class="centered">
-										<img src="{{STATIC_URL}} static/assets/img/{{ materie.path_banner }}" width="200">
+										<img src="media/{{ materie.image }}" width="200">
                                        <!--<img  style="background-image: url({% static 'assets/img/'%}{{ materie.path_banner }}) width="220">-->
 
 	                      		</div>
 
                       		</div>
-                      	</div><!-- /col-md-4 -->
+                        </div><!-- /col-md-4 --></a>
                           {% endfor %}
 
 
