@@ -15,7 +15,7 @@ def domain(request, kind):
                                                  '-id')
     return render(request, 'domain/domain.html', {
         'domain': page_domain,
-        'lesson': lesson,
+        'lessons': lesson,
 
     },
                   )

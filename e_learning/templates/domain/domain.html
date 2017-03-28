@@ -18,7 +18,11 @@
                           <h2 class="mdl-card__title-text">{{ domain.name }}</h2>
                         </div>
 
-                        <img src="{{ domain.image.url }}" alt="Smiley face" style=" height: 250px; width: 100%;">
+                        <div class="mdl-card__supporting-text">
+                          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris sagittis pellentesque lacus eleifend lacinia...
+                        </div>
+
+                        <img src="{{ domain.image.url }}" alt="Smiley face" style=" height: 190px; width: 100%;">
 
 
                 </div>
@@ -34,11 +38,11 @@
                       <!-- SERVER STATUS PANELS -->
 
 
-
+                    {% for lesson in lessons %}
                       	<div class="col-lg-3">
                       		<div class="white-panel pn">
                       			<div class="white-header">
-						  			<h5 style="color:#cc7a00">Latinitate si Dacism</h5>
+						  			<h5 style="color:#cc7a00">{{ lesson.title }}</h5>
                       			</div>
 								<div class="row">
 									<div class="col-sm-6 col-xs-6 goleft">
@@ -46,66 +50,19 @@
 									</div>
 									<div class="col-sm-6 col-xs-6"></div>
 	                      		</div>
-	                      		<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ducimus harum...
-                                    <a href="#">more</a>
+	                      		<p>{{ lesson.description }}
+                                    <a href="{{ lesson.slug }}">more</a>
 
                                 </p>
                       		</div>
                       	</div><!-- /col-md-4 -->
+                          {% endfor %}
 
-						<div class="col-lg-3">
-                      		<div class="white-panel pn">
-                      			<div class="white-header">
-						  			<h5 style="color:#cc7a00">Baltagul</h5>
-                      			</div>
-								<div class="row">
-									<div class="col-sm-6 col-xs-6 goleft">
-										<p><i class="fa fa-heart"></i> 122</p>
-									</div>
-									<div class="col-sm-6 col-xs-6"></div>
-	                      		</div>
-	                      		<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ducimus harum...
-                                    <a href="#">more</a>
 
-                                </p>
-                      		</div>
-                      	</div><!-- /col-md-4 -->
 
-                          <div class="col-lg-3">
-                      		<div class="white-panel pn">
-                      			<div class="white-header">
-						  			<h5 style="color:#cc7a00">Baltagul</h5>
-                      			</div>
-								<div class="row">
-									<div class="col-sm-6 col-xs-6 goleft">
-										<p><i class="fa fa-heart"></i> 122</p>
-									</div>
-									<div class="col-sm-6 col-xs-6"></div>
-	                      		</div>
-	                      		<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ducimus harum...
-                                    <a href="#">more</a>
 
-                                </p>
-                      		</div>
-                      	</div><!-- /col-md-4 -->
 
-                          <div class="col-lg-3">
-                      		<div class="white-panel pn">
-                      			<div class="white-header">
-						  			<h5 style="color:#cc7a00">Baltagul</h5>
-                      			</div>
-								<div class="row">
-									<div class="col-sm-6 col-xs-6 goleft">
-										<p><i class="fa fa-heart"></i> 122</p>
-									</div>
-									<div class="col-sm-6 col-xs-6"></div>
-	                      		</div>
-	                      		<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ducimus harum...
-                                    <a href="#">more</a>
 
-                                </p>
-                      		</div>
-                      	</div><!-- /col-md-4 -->
 
 
 
