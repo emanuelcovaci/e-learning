@@ -50,19 +50,10 @@ class Lesson(models.Model):
     domain = models.ForeignKey(Domain, null=True)
 
     title_paragraf_1 = models.CharField(null=True, max_length=30)
-    description_paragraf_1 = models.CharField(null=True, max_length=5000)
+    paragraf_1 = models.CharField(null=True, max_length=5000)
 
     title_paragraf_2 = models.CharField(null=True, max_length=30)
-    description_paragraf_2 = models.CharField(null=True, max_length=5000)
-
-    title_paragraf_3 = models.CharField(null=True, max_length=30)
-    description_paragraf_3 = models.CharField(null=True, max_length=5000)
-
-    title_paragraf_4 = models.CharField(null=True, max_length=30)
-    description_paragraf_4 = models.CharField(null=True, max_length=5000)
-
-    title_paragraf_5 = models.CharField(null=True, max_length=30)
-    description_paragraf_5 = models.CharField(null=True, max_length=5000)
+    paragraf_2 = models.CharField(null=True, max_length=5000)
 
     def get_absolute_url(self):
         return reverse('post', args=[self.slug])

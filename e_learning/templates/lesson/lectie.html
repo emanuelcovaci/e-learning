@@ -1,0 +1,168 @@
+{% extends "base.html" %}
+{% load staticfiles %}
+{% block content %}
+
+      <!-- **********************************************************************************************************************************************************
+      MAIN CONTENT
+      *********************************************************************************************************************************************************** -->
+      <!--main content start-->
+      <section id="main-content">
+          <section class="wrapper site-min-height">
+          <br>
+          	<!--<div class="card" z-default='20' z-hover='50' width="50">-->
+                    <!--<p>I am content!</p>-->
+            <!--</div>-->
+<a  href="/{{ domain.name }}">
+               <div class="card" >
+                        <div class="mdl-card__title">
+                          <h2 class="mdl-card__title-text">{{ domain.name }}</h2>
+                        </div>
+
+                        <img src="{{ domain.image.url }}" alt="Smiley face" style=" height: 190px; width: 100%;">
+
+
+                </div>
+</a>
+                 <br><br>
+<center>
+              <h2>{{ title }}<small> by {{ author }}</small></h2>
+    </center>
+
+              <div>
+                  <center>
+                  <h2>{{ title_1 }}</h2></center>
+                  <br><br>
+                  <h4>
+                      {{ description_1 }}
+                  </h4>
+              </div>
+
+               <div>
+                  <center>
+                  <h2>{{ title_2 }}</h2></center>
+                  <br><br>
+               <h4>
+                   {{ description_2 }}
+               </h4>
+              </div>
+
+<br><br>
+              <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12 desc">
+						<div class="project-wrapper">
+		                    <div class="project">
+		                        <div class="photo-wrapper">
+		                            <div class="photo">
+		                            	<a class="fancybox"  href="{{ image}}"><img class="img-responsive" src="{{ image }}" style="height: 300px" alt=""></a>
+		                            </div>
+		                            <div class="overlay"></div>
+		                        </div>
+		                    </div>
+		                </div>
+					</div><!-- col-lg-4 -->
+
+
+					<div class="col-lg-4 col-md-4 col-sm-4 col-xs-12 desc">
+						<div class="project-wrapper">
+		                    <div class="project">
+		                        <div class="photo-wrapper">
+		                            <div class="photo">
+		                            	<a class="fancybox" href="{{ image2 }}"><img class="img-responsive" style="height: 300px" src="{{ image2 }}" alt=""></a>
+		                            </div>
+		                            <div class="overlay"></div>
+		                        </div>
+		                    </div>
+		                </div>
+					</div><!-- col-lg-4 -->
+
+              <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12 desc">
+						<div class="project-wrapper">
+		                    <div class="project">
+		                        <div class="photo-wrapper">
+		                            <div class="photo">
+		                            	<a class="fancybox" href="{{ image3 }}"><img class="img-responsive" style="height: 300px" src="{{ image3 }}" alt=""></a>
+		                            </div>
+		                            <div class="overlay"></div>
+		                        </div>
+		                    </div>
+		                </div>
+					</div><!-- col-lg-4 -->
+              <br><br><br> <br><br><br> <br><br><br> <br><br>
+
+
+
+
+
+
+                              <div class="container">
+                                    <div class="row">
+                                    <div class="col-sm-12">
+                                    <h5>User Comment Example</h5>
+                                    </div><!-- /col-sm-12 -->
+                                    </div><!-- /row -->
+                                    <div class="row">
+                                    <div class="col-sm-1">
+                                    <div class="thumbnail">
+                                    <img class="img-responsive user-photo" src="https://ssl.gstatic.com/accounts/ui/avatar_2x.png">
+                                    </div><!-- /thumbnail -->
+                                    </div><!-- /col-sm-1 -->
+
+                                    <div class="col-sm-5">
+                                    <div class="panel panel-default">
+                                    <div class="panel-heading">
+                                    <strong>myusername</strong> <span class="text-muted">commented 5 days ago</span>
+                                    </div>
+                                    <div class="panel-body">
+                                    Panel content
+                                    </div><!-- /panel-body -->
+                                    </div><!-- /panel panel-default -->
+
+                                        <form>
+                                                <div class="form-group">
+                                                            <label for="exampleTextarea">Adauga comentariu</label>
+                                                            <textarea class="form-control" id="exampleTextarea" rows="3"></textarea>
+                                                          </div>
+                                            <button align="right" type="button" class="btn btn-theme02"><i class="glyphicon glyphicon-pencil"></i> Posteaza</button>
+                                                </div><!-- /col-sm-5 -->
+
+                                        </form>
+
+
+
+                                        </div>
+
+
+
+
+
+
+
+
+
+
+
+</body>
+
+			
+		</section><! --/wrapper -->
+      </section><!-- /MAIN CONTENT -->
+
+  </section>
+
+
+
+
+<!--common script for all pages-->
+    <script src="assets/js/common-scripts.js"></script>
+
+    <!--script for this page-->
+    
+  <script>
+      //custom select box
+
+      $(function(){
+          $('select.styled').customSelect();
+      });
+
+  </script>
+
+ {% endblock %}
