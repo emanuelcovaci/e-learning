@@ -13,7 +13,7 @@ def lesson(request,name,slug):
                                    'creation_date','timePost','domain','title_paragraf_1',
                                    'paragraf_1','title_paragraf_2','paragraf_2',
                                   ).filter(slug=slug)
-    print lesson[0].get('paragraf_2')
+
     context = {
         'domain':domain,
         'title':lesson[0].get('title'),
