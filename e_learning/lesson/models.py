@@ -37,16 +37,13 @@ class Lesson(models.Model):
                                null=True, blank=True)
     image3 = models.ImageField(upload_to=upload_location,
                                null=True, blank=True)
-    image4 = models.ImageField(upload_to=upload_location,
-                               null=True, blank=True)
     description = models.CharField('Task description',
                                    null=True, max_length=500)
     slug = models.SlugField(default=uuid.uuid1, unique=True)
-    author = models.ForeignKey(to=User, related_name='posts',
+    author = models.ForeignKey(User, related_name='posts',
                                null=True, blank=True)
-    creation_date = models.DateTimeField(editable=False, auto_now_add=True,
+    creation_date = models.DateTimeField(auto_now_add=True,editable=False,
                                          null=True)
-    timePost = models.TimeField('Time FORMAT HH:MM:SS', null=True)
     domain = models.ForeignKey(Domain, null=True)
 
     title_paragraf_1 = models.CharField(null=True, max_length=30)
@@ -56,7 +53,7 @@ class Lesson(models.Model):
     paragraf_2 = models.CharField(null=True, max_length=5000)
 
     def get_absolute_url(self):
-        return reverse('post', args=[self.slug])
+        return reverse('lesson', args=[self.slug])
 
     class Meta:
         get_latest_by = 'creation_date'

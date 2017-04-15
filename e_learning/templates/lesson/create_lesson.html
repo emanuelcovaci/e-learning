@@ -1,0 +1,198 @@
+{% extends "base.html" %}
+{% load staticfiles  %}
+{% block content %}
+{% load widget_tweaks %}
+
+      <!-- **********************************************************************************************************************************************************
+      MAIN CONTENT
+      *********************************************************************************************************************************************************** -->
+      <!--main content start-->
+      <section id="main-content">
+          <section class="wrapper">
+          	<h3><i class="fa fa-angle-right"></i> Create Lesson </h3>
+
+          	<!-- BASIC FORM ELELEMNTS -->
+          	<div class="row mt">
+          		<div class="col-lg-12">
+                  <div class="form-panel">
+                  	  <h4 class="mb"><i class="fa fa-angle-right"></i>Lesson Information </h4>
+                        <form  method="POST" enctype="multipart/form-data"  class="form-horizontal style-form">
+                              {% csrf_token %}
+                          <div class="form-group">
+                              <label class="col-sm-2 col-sm-2 control-label">Title</label>
+                              <div class="col-sm-10">
+                                  <!-- <input type="text" class="form-control"> -->
+
+                                  {{ form.title|add_class:"form-control "|attr:"placeholder:Enter a title"|attr:"required:required"}}
+                                  {% if form.title.errors %}
+                                                        <div class="alert alert-danger fade in" id="input-alert">
+                                                        <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+                                                        <strong>Warning!</strong>
+				                                        {% for error in form.title.errors %}
+				                                                {{ error }}
+				                                        {% endfor %}
+                                                            </div>
+                                             {% endif %}
+                              </div>
+                          </div>
+                          <div class="form-group">
+                              <label class="col-sm-2 col-sm-2 control-label">Short Description</label>
+                              <div class="col-sm-10">
+                                 {{ form.description|add_class:"form-control "|attr:"placeholder:Enter a description"|attr:"required:required"}}
+
+                                 {% if form.description.errors %}
+                                                         <div class="alert alert-danger fade in" id="input-alert">
+                                                         <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+                                                         <strong>Warning!</strong>
+ 				                                        {% for error in form.description.errors %}
+ 				                                                {{ error }}
+ 				                                        {% endfor %}
+                                                             </div>
+                                              {% endif %}
+                              </div>
+                          </div>
+                          <div class="form-group">
+                              <label class="col-sm-2 col-sm-2 control-label">Domain </label>
+                              <div class="col-sm-10">
+                                   {{ form.domain|add_class:"form-control "|attr:"required:required"}}
+
+                                   {% if form.domain.errors %}
+                                                        <div class="alert alert-danger fade in" id="input-alert">
+                                                        <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+                                                        <strong>Warning!</strong>
+				                                        {% for error in form.domain.errors %}
+				                                                {{ error }}
+				                                        {% endfor %}
+                                                            </div>
+                                             {% endif %}
+                              </div>
+                          </div>
+
+                  </div>
+          		</div><!-- col-lg-12-->
+          	</div><!-- /row -->
+
+              <div class="row mt">
+          		<div class="col-lg-12">
+                  <div class="form-panel">
+                  	  <h4 class="mb"><i class="fa fa-angle-right"></i>Lesson content</h4>
+
+                          <div class="form-group">
+                              <label class="col-sm-2 col-sm-2 control-label">Title 1</label>
+                              <div class="col-sm-10">
+                                {{ form.title_paragraf_1|add_class:"form-control "|attr:"placeholder:Enter a title "|attr:"required:required"}}
+
+                                {% if form.title_paragraf_1.errors %}
+                                                     <div class="alert alert-danger fade in" id="input-alert">
+                                                     <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+                                                     <strong>Warning!</strong>
+                                             {% for error in form.title_paragraf_1.errors %}
+                                                     {{ error }}
+                                             {% endfor %}
+                                                         </div>
+                                          {% endif %}
+
+                              </div>
+                          </div>
+<br><br><br>
+                          <div class="form-group">
+                              <label class="col-sm-2 col-sm-2 control-label">Paragraf 1</label>
+                              <div class="col-sm-10">
+                                {{ form.paragraf_1|add_class:"form-control "|attr:"placeholder:Enter lesson countend"|attr:"required:required"}}
+
+                                {% if form.paragraf_1.errors %}
+                                                        <div class="alert alert-danger fade in" id="input-alert">
+                                                        <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+                                                        <strong>Warning!</strong>
+                                               {% for error in form.paragraf_1.errors %}
+                                                       {{ error }}
+                                               {% endfor %}
+                                                            </div>
+                                             {% endif %}
+                              </div>
+                          </div>
+
+                          <div class="form-group">
+                              <label class="col-sm-2 col-sm-2 control-label">Title 2</label>
+                              <div class="col-sm-10">
+                                {{ form.title_paragraf_2|add_class:"form-control "|attr:"placeholder:Enter a title "|attr:"required:required"}}
+
+                                {% if form.title_paragraf_2.errors %}
+                                                     <div class="alert alert-danger fade in" id="input-alert">
+                                                     <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+                                                     <strong>Warning!</strong>
+                                             {% for error in form.title_paragraf_2.errors %}
+                                                     {{ error }}
+                                             {% endfor %}
+                                                         </div>
+                                          {% endif %}
+                              </div>
+                          </div>
+
+                          <div class="form-group">
+                            <br>
+                              <label class="col-sm-2 col-sm-2 control-label">Pharagraf 2</label>
+                              <div class="col-sm-10">
+                                {{ form.paragraf_2|add_class:"form-control "|attr:"placeholder:Enter lesson countend"|attr:"required:required"}}
+
+                                {% if form.paragraf_2.errors %}
+                                                        <div class="alert alert-danger fade in" id="input-alert">
+                                                        <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+                                                        <strong>Warning!</strong>
+                                               {% for error in form.paragraf_2.errors %}
+                                                       {{ error }}
+                                               {% endfor %}
+                                                            </div>
+                                             {% endif %}
+                              </div>
+                          </div>
+
+                          <div class="form-group">
+                            <br>
+                              <label class="col-sm-2 col-sm-2 control-label">Image</label>
+                              <div class="col-sm-10">
+                                {{ form.image|add_class:"form-control " }}
+                                                {% if form.image.errors %}
+                                                        <div class="alert alert-danger fade in" id="input-alert">
+                                                        <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+                                                        <strong>Warning!</strong>
+				                                        {% for error in form.image.errors %}
+				                                                {{ error }}
+				                                        {% endfor %}
+                                                            </div>
+                                             {% endif %}<br>
+                                                 {{ form.image2|add_class:"form-control " }}
+                                                {% if form.image2.errors %}
+                                                        <div class="alert alert-danger fade in" id="input-alert">
+                                                        <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+                                                        <strong>Warning!</strong>
+				                                        {% for error in form.image2.errors %}
+				                                                {{ error }}
+				                                        {% endfor %}
+                                                            </div>
+                                             {% endif %}<br>
+                                                 {{ form.image3|add_class:"form-control " }}
+                                                {% if form.image3.errors %}
+                                                        <div class="alert alert-danger fade in" id="input-alert">
+                                                        <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+                                                        <strong>Warning!</strong>
+				                                        {% for error in form.image3.errors %}
+				                                                {{ error }}
+				                                        {% endfor %}
+                                                            </div>
+                                             {% endif %}<br>
+                              </div>
+                          </div>
+
+                          <center>
+                           <button type="submit" class="btn btn-success">Submit</button>
+                          </center>
+                      </form>
+                  </div>
+          		</div><!-- col-lg-12-->
+          	</div><!-- /row -->
+
+
+		</section><! --/wrapper -->
+      </section><!-- /MAIN CONTENT -->
+ {% endblock %}
