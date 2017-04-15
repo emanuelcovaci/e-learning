@@ -1,7 +1,7 @@
 {% extends "base.html" %}
 {% load staticfiles %}
 {% block content %}
-      
+
       <!-- **********************************************************************************************************************************************************
       MAIN CONTENT
       *********************************************************************************************************************************************************** -->
@@ -18,11 +18,7 @@
                           <h2 class="mdl-card__title-text">{{ domain.name }}</h2>
                         </div>
 
-                        <div class="mdl-card__supporting-text">
-                          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris sagittis pellentesque lacus eleifend lacinia...
-                        </div>
-
-                        <img src="{{ domain.image.url }}" alt="Smiley face" style=" height: 190px; width: 100%;">
+                        <img src="{{ domain.image.url }}" alt="Smiley face" style="height:80%;width:100%">
 
 
                 </div>
@@ -50,7 +46,7 @@
 									</div>
 									<div class="col-sm-6 col-xs-6"></div>
 	                      		</div>
-	                      		<p>{{ lesson.description }}
+	                      		<p>{{ lesson.description|truncatechars:120 }}
                                     <a href="/lesson/{{ domain.name  }}/{{ lesson.slug }}">more</a>
 
                                 </p>
@@ -83,7 +79,7 @@
 
 </body>
 
-			
+
 		</section><! --/wrapper -->
       </section><!-- /MAIN CONTENT -->
 
@@ -105,7 +101,7 @@
     <script src="assets/js/common-scripts.js"></script>
 
     <!--script for this page-->
-    
+
   <script>
       //custom select box
 
