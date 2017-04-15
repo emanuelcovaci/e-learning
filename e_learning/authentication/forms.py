@@ -63,3 +63,18 @@ class UserRegisterForm(forms.ModelForm):
         if len(password) < 8:
             raise forms.ValidationError("Password is too short")
         return password2
+
+
+class PasswordResetForm(forms.Form):
+    old_password = forms.CharField(max_length=160, min_length=8,
+                                   label="Old password",
+                                   widget=forms.PasswordInput(
+                                       attrs={'required': 'required'}))
+    password_1 = forms.CharField(max_length=160, min_length=8,
+                                 label="New password",
+                                 widget=forms.PasswordInput(
+                                     attrs={'required': 'required'}))
+    password_2 = forms.CharField(max_length=160, min_length=8,
+                                 label="Type again the new password",
+                                 widget=forms.PasswordInput(
+                                     attrs={'required': 'required'}))

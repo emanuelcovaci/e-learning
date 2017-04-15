@@ -32,14 +32,13 @@ def lesson(request,name,slug):
 @login_required
 def create_lesson(request):
     current_user = request.user
-    print current_user
     form = CreateLessonForm(request.POST or None, request.FILES or None,user=current_user)
     if request.method == 'POST':
         if form.is_valid():
             post = form.instance
             post.author = current_user
             form.save()
-            return redirect('/')
+            return redirect('/'+post.domain.name)
     return render(request,'lesson/create_lesson.html',{
         'form':form,
     })

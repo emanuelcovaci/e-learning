@@ -5,7 +5,7 @@ from django.contrib.auth.decorators import login_required
 from django.core.urlresolvers import reverse
 from django.contrib.auth import logout
 
-from .forms import LoginForm, UserRegisterForm
+from .forms import LoginForm, UserRegisterForm,PasswordResetForm
 
 
 # Create your views here.
@@ -54,5 +54,31 @@ def register_page(request):
         'form': form,
     })
 
+@login_required
 def change_password(request):
-    return render(request,'authentication/change_password.html')
+    errors = []
+    form = PasswordResetForm(request.POST)
+    if request.method == 'POST':
+        if form.is_valid():
+            password_old = form.cleaned_data['old_password']
+            password_new = form.cleaned_data['password_1']
+            check = password_new == form.cleaned_data['password_2']
+            if not check:
+                errors.append('Those two password are not the same')
+            elif request.user.check_password(password_old):
+                if password_new.isdigit():
+                    errors.append('Password is entirely numeric')
+                else:
+                    request.user.set_password(password_new)
+                    request.user.save()
+                    user = authenticate(username=request.user.username,
+                                        password=password_new)
+                    login(request, user)
+                    return redirect('/')
+            else:
+                errors.append('Incorrect old password')
+        else:
+            errors.append('Invalid form')
+    return render(request, "authentication/change_password.html",
+                  {'form': form,
+                   'errors': errors})

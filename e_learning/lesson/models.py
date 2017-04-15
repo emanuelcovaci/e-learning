@@ -53,7 +53,7 @@ class Lesson(models.Model):
     paragraf_2 = models.CharField(null=True, max_length=5000)
 
     def get_absolute_url(self):
-        return reverse('lesson', args=[self.slug])
+        return reverse('post', args=[self.slug])
 
     class Meta:
         get_latest_by = 'creation_date'
