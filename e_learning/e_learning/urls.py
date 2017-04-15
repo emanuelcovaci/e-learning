@@ -24,5 +24,6 @@ urlpatterns = [
     url(r'^', include('authentication.urls')),
     url(r'^', include('lesson.urls')),
     url(r'^', include('domain.urls')),
+    url(r'^', include('profiles.urls')),
 
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

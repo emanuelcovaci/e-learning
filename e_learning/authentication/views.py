@@ -53,3 +53,6 @@ def register_page(request):
     return render(request, "authentication/register.html", {
         'form': form,
     })
+
+def change_password(request):
+    return render(request,'authentication/change_password.html')
