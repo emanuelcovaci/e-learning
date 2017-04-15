@@ -1,6 +1,7 @@
 from django.shortcuts import render
 from models import Domain
 from django.contrib.auth.decorators import login_required
+from django.http import HttpResponseForbidden
 from django.shortcuts import  get_object_or_404
 from django.shortcuts import redirect
 from .forms import CreateLessonForm
@@ -42,6 +43,24 @@ def create_lesson(request):
     return render(request,'lesson/create_lesson.html',{
         'form':form,
     })
+
+@login_required
+def edit_lesson(request,slug):
+    lesson = get_object_or_404(Lesson,slug=slug)
+    domain = lesson.domain.name
+    if lesson.author != request.user:
+        return HttpResponseForbidden()
+    form = CreateLessonForm(request.POST or None, request.FILES or None,
+                        instance=lesson, user=request.user)
+    if request.method == 'POST':
+        if form.is_valid():
+            form.save()
+            return redirect('/lesson/'+domain+'/'+lesson.slug)
+    return render (request,'lesson/create_lesson.html',{
+        'form':form,
+    })
+
+
 
 @login_required
 def list(request):
