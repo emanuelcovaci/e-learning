@@ -91,57 +91,49 @@
 
 
 
+  <div class="container">
+        <div class="row">
+            <div class="col-sm-12">
+                  <br><br>
+                  {% if comments %}
+                      {% for comment in comments %}
+            </div><!-- /col-sm-12 -->
 
+        </div><!-- /row -->
 
-                              <div class="container">
-                                    <div class="row">
-                                    <div class="col-sm-12">
-                                    <h5>User Comment Example</h5>
-                                    </div><!-- /col-sm-12 -->
-                                    </div><!-- /row -->
-                                    <div class="row">
-                                    <div class="col-sm-1">
-                                    <div class="thumbnail">
-                                    <img class="img-responsive user-photo" src="https://ssl.gstatic.com/accounts/ui/avatar_2x.png">
-                                    </div><!-- /thumbnail -->
-                                    </div><!-- /col-sm-1 -->
+        <div class="row">
+            <div class="col-sm-1">
+                  <div class="thumbnail">
+                        <img class="img-responsive user-photo" src="https://ssl.gstatic.com/accounts/ui/avatar_2x.png">
+                  </div><!-- /thumbnail -->
+            </div><!-- /col-sm-1 -->
+           <div class="col-sm-5">
 
-                                    <div class="col-sm-5">
-                                    <div class="panel panel-default">
-                                    <div class="panel-heading">
-                                    <strong>myusername</strong> <span class="text-muted">commented 5 days ago</span>
-                                    </div>
-                                    <div class="panel-body">
-                                    Panel content
-                                    </div><!-- /panel-body -->
-                                    </div><!-- /panel panel-default -->
+                        <div class="panel panel-default">
+                            <div class="panel-heading">
+                                <strong>{{ comment.author }}</strong> <span class="text-muted">{{ comment.date }}</span>
+                            </div>
+                            <div class="panel-body">
+                                {{ comment.content }}
+                            </div><!-- /panel-body -->
+                        </div><!-- /panel panel-default -->
+                   {% endfor %}
+              {% endif %}
+              <form>
+                      <div class="form-group">
+                                  <label for="exampleTextarea">Adauga comentariu</label>
+                                  <textarea class="form-control" id="exampleTextarea" rows="3"></textarea>
+                                </div>
+                  <button align="right" type="button" class="btn btn-theme02"><i class="glyphicon glyphicon-pencil"></i> Posteaza</button>
+                      </div><!-- /col-sm-5 -->
 
-                                        <form>
-                                                <div class="form-group">
-                                                            <label for="exampleTextarea">Adauga comentariu</label>
-                                                            <textarea class="form-control" id="exampleTextarea" rows="3"></textarea>
-                                                          </div>
-                                            <button align="right" type="button" class="btn btn-theme02"><i class="glyphicon glyphicon-pencil"></i> Posteaza</button>
-                                                </div><!-- /col-sm-5 -->
+              </form>
+            </div>
 
-                                        </form>
-
-
-
-                                        </div>
-
-
-
-
-
-
-
-
-
-
+        </div><!-- /row -->
+</div>
 
 </body>
-
 
 		</section><! --/wrapper -->
       </section><!-- /MAIN CONTENT -->

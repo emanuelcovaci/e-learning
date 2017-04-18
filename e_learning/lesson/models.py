@@ -37,8 +37,7 @@ class Lesson(models.Model):
                                null=True, blank=True)
     image3 = models.ImageField(upload_to=upload_location,
                                null=True, blank=True)
-    description = models.CharField('Task description',
-                                   null=True, max_length=500)
+    description = models.CharField(null=True, max_length=500)
     slug = models.SlugField(default=uuid.uuid1, unique=True)
     author = models.ForeignKey(User, related_name='posts',
                                null=True, blank=True)
@@ -57,3 +56,6 @@ class Lesson(models.Model):
 
     class Meta:
         get_latest_by = 'creation_date'
+
+    def __unicode__(self):
+            return self.title

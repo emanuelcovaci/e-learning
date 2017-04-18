@@ -41,8 +41,7 @@ INSTALLED_APPS = [
     'homepages',
     'domain',
     'lesson',
-
-
+    'comment',
     'widget_tweaks',
 ]
 

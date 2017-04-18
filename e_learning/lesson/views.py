@@ -6,6 +6,7 @@ from django.shortcuts import  get_object_or_404
 from django.shortcuts import redirect
 from .forms import CreateLessonForm
 from lesson.models import Lesson
+from comment.models import Comment
 from django.contrib.auth.models import User
 
 # Create your views here.
@@ -13,6 +14,7 @@ from django.contrib.auth.models import User
 def lesson(request,name,slug):
     domain = get_object_or_404(Domain, name=name)
     lesson = Lesson.objects.all().filter(slug=slug)
+    comments = Comment.objects.all().filter(lesson=lesson)
     context = {
         'domain':domain,
         'title':lesson[0].title,
@@ -25,6 +27,7 @@ def lesson(request,name,slug):
         'description_1':lesson[0].paragraf_1,
         'title_2': lesson[0].title_paragraf_2,
         'description_2': lesson[0].paragraf_2,
+        'comments':comments,
     }
     return render(request,'lesson/lectie.html',context)
 
