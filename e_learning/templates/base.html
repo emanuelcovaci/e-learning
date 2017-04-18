@@ -216,7 +216,7 @@
                     {% else %}
                     <img src="{% static "assets/img/ema2.jpg"%}" class="img-circle" width="70"></a></p>
                     {% endif %}
-                 <h5 class="centered">Emanuel Covaci</h5>
+                 <h5 class="centered">{{ user }}</h5>
 
                   <li class="mt">
                       <a class="active" href="/">
@@ -231,12 +231,11 @@
                           <span>Materii</span>
                       </a>
                       <ul class="sub">
-                          <li><a  href="/Limba%20Romana/">Limba Romana</a></li>
-                          <li><a  href="/Matematica/">Matematica</a></li>
-                          <li><a  href="/Informatica/">Informatica</a></li>
-                           <li><a  href="/Fizica/">Fizica</a></li>
-                          <li><a  href="/Chimie">Chimie</a></li>
-                          <li><a  href="/Biologie">Biologie</a></li>
+                        {% if domains_list%}
+                         {% for item in domains_list %}
+                          <li><a  href="/{{item}}">{{ item }}</a></li>
+                          {% endfor %}
+                          {% endif %}
                       </ul>
                   </li>
 
