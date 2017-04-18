@@ -5,7 +5,7 @@ from django.contrib.auth.decorators import login_required
 from django.core.urlresolvers import reverse
 from django.contrib.auth import logout
 
-from .forms import LoginForm, UserRegisterForm,PasswordResetForm
+from .forms import LoginForm, UserRegisterForm,PasswordResetForm,AccountRegisterForm
 
 
 # Create your views here.
@@ -42,10 +42,13 @@ def login_page(request):
 
 def register_page(request):
     form = UserRegisterForm(data=request.POST or None)
+    acc_form = AccountRegisterForm(request.POST or None, request.FILES or None)
     if request.method == 'POST':
         if form.is_valid():
             form.instance.set_password(form.cleaned_data['password'])
             form.save()
+            acc_form.instance.user = form.instance
+            acc_form.save()
             user = authenticate(username=form.instance.username,
                                 password=form.cleaned_data['password'])
             login(request, user)

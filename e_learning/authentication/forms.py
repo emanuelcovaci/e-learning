@@ -1,6 +1,7 @@
 from django import forms
 from django.core.validators import validate_email
 from django.contrib.auth.models import User
+from .models import Account
 
 # from captcha.fields import ReCaptchaField
 
@@ -78,3 +79,9 @@ class PasswordResetForm(forms.Form):
                                  label="Type again the new password",
                                  widget=forms.PasswordInput(
                                      attrs={'required': 'required'}))
+
+class AccountRegisterForm(forms.ModelForm):
+
+    class Meta:
+        model = Account
+        fields = ['profile_image']
