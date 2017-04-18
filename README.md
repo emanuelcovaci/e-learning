@@ -18,6 +18,7 @@ $  pip install -r requirements.txt
 
  ```sh
 $  python manage.py runserver 
+```
 
 ## Tehnologi folosite
 * Html
