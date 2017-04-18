@@ -19,7 +19,7 @@
                         <style>
                          #img_size
                                   {
-                           height: 300px;
+                           max-height: 400px;
                          }
                          @media only screen and (max-width: 599px){
                                 #img_size {
@@ -38,7 +38,7 @@
                   {% if request.user.account.profile_image %}
                         <img id=img_size src='{{ request.user.account.profile_image.url }}'>
                   {% else %}
-                        <img class="img_size" src="{% static "assets/img/ema2.jpg"%}">
+                        <img id="img_size" src="{% static "assets/img/avatar.png"%}">
                   {% endif %}
                          </div>
                       <h4>{{ user }}</h4>

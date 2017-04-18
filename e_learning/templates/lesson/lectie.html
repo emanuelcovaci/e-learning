@@ -105,7 +105,11 @@
         <div class="row">
             <div class="col-sm-1">
                   <div class="thumbnail">
-                        <img class="img-responsive user-photo" src="https://ssl.gstatic.com/accounts/ui/avatar_2x.png">
+                    {% if comment.author.account.profile_image%}
+                        <img class="img-responsive user-photo" src="{{ comment.author.account.profile_image.url}}">
+                        {%else%}
+          <img class="img-responsive user-photo" src="{% static "assets/img/avatar.png"%}">
+                          {% endif %}
                   </div><!-- /thumbnail -->
             </div><!-- /col-sm-1 -->
            <div class="col-sm-5">

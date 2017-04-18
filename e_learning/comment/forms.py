@@ -6,7 +6,7 @@ class CommentForm(forms.ModelForm):
         model = Comment
         fields = ['content']
 
-        widgets = {'content': forms.Textarea(attrs={'required': 'required',
+        widgets = {'content': forms.Textarea(attrs={'required': 'required','rows':5,
                                                        })
                    }
 

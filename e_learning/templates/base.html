@@ -54,7 +54,7 @@
             <a href="/" class="logo"><b>E-Learning</b></a>
             <!--logo end-->
             <div class="nav notify-row" id="top_menu">
-              
+
             </div>
             <div class="top-menu">
             	<ul class="nav pull-right top-menu">
@@ -77,7 +77,7 @@
                     {% if request.user.account.profile_image %}
                         <img src='{{ request.user.account.profile_image.url }}' class="img-circle" width="70"></a></p>
                     {% else %}
-                    <img src="{% static "assets/img/ema2.jpg"%}" class="img-circle" width="70"></a></p>
+                    <img src="{% static "assets/img/avatar.png"%}" class="img-circle" width="70"></a></p>
                     {% endif %}
                  <h5 class="centered">{{ user }}</h5>
 

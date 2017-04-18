@@ -19,7 +19,7 @@
                         {% if request.user.account.profile_image %}
                               <img style="max-height: 400px" src='{{ request.user.account.profile_image.url }}'>
                         {% else %}
-                              <img style="max-height: 400px" src="{% static "assets/img/ema2.jpg"%}">
+                              <img style="max-height: 400px" src="{% static "assets/img/avatar.png"%}">
                         {% endif %}
                          </div>
                       <h4>{{ request.user.username }}</h4>
@@ -50,7 +50,7 @@
                           <div class="form-group">
                               <label class="col-sm-2 col-sm-2 control-label">Image profile </label>
                               <div class="col-sm-10">
-                                  {{ form_acc.profile_image|add_class:"form-control "|attr:"required:required"}}
+                                  {{ form_acc.profile_image|add_class:"form-control "}}
                               </div>
                           </div>
 
