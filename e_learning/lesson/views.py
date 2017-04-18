@@ -5,6 +5,7 @@ from django.http import HttpResponseForbidden
 from django.shortcuts import  get_object_or_404
 from django.shortcuts import redirect
 from .forms import CreateLessonForm
+from comment.forms import CommentForm
 from lesson.models import Lesson
 from comment.models import Comment
 from django.contrib.auth.models import User
@@ -12,6 +13,8 @@ from django.contrib.auth.models import User
 # Create your views here.
 @login_required
 def lesson(request,name,slug):
+    current_user = request.user
+    form = CommentForm(request.POST or None, request.FILES or None)
     domain = get_object_or_404(Domain, name=name)
     lesson = Lesson.objects.all().filter(slug=slug)
     comments = Comment.objects.all().filter(lesson=lesson)
@@ -28,7 +31,16 @@ def lesson(request,name,slug):
         'title_2': lesson[0].title_paragraf_2,
         'description_2': lesson[0].paragraf_2,
         'comments':comments,
+        'form':form,
     }
+    if request.method == 'POST':
+        if form.is_valid():
+            post = form.instance
+            form.instance.lesson = get_object_or_404(Lesson, slug=slug)
+            post.author = current_user
+            form.save()
+            return redirect('/lesson'+'/' + name + '/' +slug)
+
     return render(request,'lesson/lectie.html',context)
 
 

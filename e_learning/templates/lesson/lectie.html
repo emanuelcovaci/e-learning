@@ -1,5 +1,6 @@
 {% extends "base.html" %}
 {% load staticfiles %}
+{% load widget_tweaks %}
 {% block content %}
 
       <!-- **********************************************************************************************************************************************************
@@ -119,12 +120,13 @@
                         </div><!-- /panel panel-default -->
                    {% endfor %}
               {% endif %}
-              <form>
+              <form method="POST">
+                  {% csrf_token %}
                       <div class="form-group">
                                   <label for="exampleTextarea">Adauga comentariu</label>
-                                  <textarea class="form-control" id="exampleTextarea" rows="3"></textarea>
+                                  {{ form.content|add_class:"form-control "|attr:"placeholder:Mesajul dvs."|attr:"required:required"}}
                                 </div>
-                  <button align="right" type="button" class="btn btn-theme02"><i class="glyphicon glyphicon-pencil"></i> Posteaza</button>
+                  <button align="right" type="submit" class="btn btn-theme02"><i class="glyphicon glyphicon-pencil"></i> Posteaza</button>
                       </div><!-- /col-sm-5 -->
 
               </form>
