@@ -65,9 +65,21 @@
     <!-- Header -->
     <header id="top" class="header">
         <div class="text-vertical-center">
-            <h1 style="color:white">E-learning</h1>
+            <h1 style="color:white">E-<a style="color:#FF405A">learning</a></h1>
+            <style>
+             #color_title
+                      {
+               color:white;
+             }
+             @media only screen and (max-width: 1020px){
+                    #color_title {
+                        color:black;
+                    }
+                  }
 
-            <h3 style="color:white" >Suntem aici pentru tine !</h3>
+            </style>
+
+            <!-- <h2  id=color_title >Suntem </hh3><a style="color:white">aici pentru <a id=color_title> tine !</a></a> -->
             <br>
             <a href="#about" class="btn btn-dark btn-lg">Alfa mai multe</a>
         </div>
@@ -131,7 +143,8 @@
                                 <h4>
                                     <strong>Incepe sa inveti</strong>
                                 </h4>
-                                <p>Folosind resursele nostre e mult mo usor de invatat</p>
+
+                                <p>Folosind resursele nostre e mult mai usor de invatat</p>
                                 <!--<a href="#" class="btn btn-light">Learn More</a>-->
                             </div>
                         </div>
@@ -160,7 +173,19 @@
     <!-- Callout -->
     <aside class="callout">
         <div class="text-vertical-center">
-            <h1 style="color:black">Resurse<a style="color:white"> digitale</a></h1>
+        <style>
+         #color_text
+                  {
+           color:black;
+         }
+         @media only screen and (max-width: 453px){
+                #color_text {
+                    color: white;
+                }
+              }
+
+        </style>
+            <h1 id=color_text>Resurse<a style="color:white"> digitale</a></h1>
 
         </div>
     </aside>
