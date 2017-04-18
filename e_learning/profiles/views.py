@@ -6,6 +6,7 @@ from forms import UserEdit, AccountEdit
 
 
 # Create your views here.
+@login_required
 def profile(request):
     user = request.user.username
     email = request.user.email
@@ -14,7 +15,7 @@ def profile(request):
         'email': email,
     })
 
-
+@login_required
 def edit_profile(request):
     current_user = request.user
     user_form = UserEdit(data=request.POST or None,
