@@ -2,9 +2,10 @@ from __future__ import unicode_literals
 
 from django import forms
 from django.contrib.auth.models import User
+from authentication.models import Account
 
 
-class User_Edit(forms.ModelForm):
+class UserEdit(forms.ModelForm):
 
     class Meta:
         model = User
@@ -12,7 +13,7 @@ class User_Edit(forms.ModelForm):
 
     def __init__(self, *args, **kwargs):
         self.user = kwargs.pop('user', None)
-        super(User_Edit, self).__init__(*args, **kwargs)
+        super(UserEdit, self).__init__(*args, **kwargs)
 
     def clean_email(self):
         email = self.cleaned_data['email']
@@ -26,3 +27,9 @@ class User_Edit(forms.ModelForm):
            self.user.username != user_name:
             raise forms.ValidationError("This username already exists")
         return user_name
+
+
+class AccountEdit(forms.ModelForm):
+    class Meta:
+        model = Account
+        fields = ['profile_image']

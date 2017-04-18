@@ -16,7 +16,11 @@
           		<div class="col-lg-12">
                   <div class="form-panel">
                   	  <div class="card-image">
+                  {% if request.user.account.profile_image %}
+                        <img style="max-height: 400px" src='{{ request.user.account.profile_image.url }}'>
+                  {% else %}
                         <img style="max-height: 400px" src="{% static "assets/img/ema2.jpg"%}">
+                  {% endif %}
                          </div>
                       <h4>{{ user }}</h4>
                   </div>
