@@ -19,7 +19,7 @@ $  pip install -r requirements.txt
  ```sh
 $  python manage.py runserver 
 ```
-
+![alt tag](https://raw.githubusercontent.com/emanuelcovaci/e-learning/master/e_learning/static/img/scc.png)
 ## Tehnologi folosite
 * Html
 * Css
