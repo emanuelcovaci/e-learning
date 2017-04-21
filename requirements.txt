@@ -2,3 +2,4 @@ django-widget-tweaks==1.4.1
 Django==1.10.3
 django-recaptcha==1.0.5
 Pillow
+django-jenkins
