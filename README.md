@@ -6,8 +6,6 @@
 
 ### Donatii
 * Acest proiect are nevoie de ajutorul comunitatii pentru a putea fi online 24h din 24h astfel incat informatiile sa ajunga cu usurinta la oricine
-* Paypal: https://www.paypal.me/emanuelcovaci
-
 ## Deploy
 * Pentru a rula proiectul trebuie sa urmariti acesti pasi:
 
